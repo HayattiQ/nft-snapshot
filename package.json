@@ -1,0 +1,29 @@
+{
+  "name": "nft-snapshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HayattiQ/nft-snapshot.git"
+  },
+  "author": "Hayatti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HayattiQ/nft-snapshot/issues"
+  },
+  "homepage": "https://github.com/HayattiQ/nft-snapshot#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "csv-stringify": "^6.0.5",
+    "dotenv": "^16.0.0",
+    "moralis": "^1.3.1"
+  }
+}
