@@ -27,12 +27,12 @@ getOwners();
 
 async function MoralisEach(total: number) {
   let eachResult: OwnerResult = [];
-  let options;
+  let options: any = nftconfig.options;
   let offset = 0;
 
   console.log("First each process.");
   for (let offset = 0; offset < total; offset += 500) {
-    options = { address: nftconfig.contract_address, offset: offset };
+    options["offset"] = offset;
     console.log("Each process running. offset=" + offset);
     let data = await moralis.Web3API.token.getNFTOwners(options);
     if (!data.result) {
@@ -48,9 +48,8 @@ async function MoralisEach(total: number) {
 async function getOwners() {
   try {
 
-    const options = { address: nftconfig.contract_address };
     await moralis.start({ serverUrl: process.env.SERVER_URL });
-    const data = await moralis.Web3API.token.getNFTOwners(options);
+    const data = await moralis.Web3API.token.getNFTOwners(nftconfig.options);
 
 
     await fs.writeFile("./output/first_send.json", JSON.stringify(data, null, 2));
